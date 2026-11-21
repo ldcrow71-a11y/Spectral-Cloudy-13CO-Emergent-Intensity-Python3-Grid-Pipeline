@@ -1,0 +1,23 @@
+# Independent radius-density model
+title G028.320+01.243 low-metallicity cloud model
+radius 18.489350545 19.313500000
+sphere
+CMB
+blackbody 33000 K
+Q(H) 47.97
+hden 3.00000000
+abundances GASS10
+metals deplete
+grains ISM
+grains pah
+metals and grains 0.4 linear
+element carbon isotopes (12, 104) (13, 1)
+atom H2
+cosmic rays background
+stop temperature off
+set nend 10000
+iterate to convergence
+# With this Q(H)/radius setup, absolute selected-line output is linear erg/s.
+save line list "co13_luminosity.txt" "13co_lines.dat" emergent absolute last no hash
+# Whole-species H2 column, linear cm^-2; no rotational level selector.
+save species column density "h2_column.txt" "H2" last no hash
